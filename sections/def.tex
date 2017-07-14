@@ -1,0 +1,86 @@
+%!TEX root=../inftycat.tex
+In this section, we will give the definition of $\infty$-category given by Jacob Lurie, which is defined with notion of quasi-category. We assume that readers have already learnt some simplicial homotopy theory and model category.
+\begin{mydefn}
+Suppose $\mathcal{C}$ be a simplicial set. $\mathcal{C}$ is called a $\infty$-category if it is a weak Kan complex i.e there is following extensions for each positive integers $n$ and $0<i<n$.
+
+\[
+\xymatrix{
+\wedge^{n}_{i} \ar[r]^{f_n} \ar[d]^{i}& \mathcal{C}&\\
+\Delta[n] \ar@{-->}[ru]&  &
+}
+\]
+\end{mydefn}
+
+\begin{ex}
+  The nerve of a locally small category is a $\infty$-category since is a Kan complex so is a weak Kan complex.
+\end{ex}
+An \textbf{object} of $\infty$-category $\mathcal{C}$ is a simplicial sets morphism $\Delta[0] \rightarrow \mathcal{C}$ or equivalently a 0-simplic of $\mathcal{C}$. A \textbf{1-morphism} of $\mathcal{C}$ is morphism $\Delta[1] \rightarrow \mathcal{C}$ or equivalently an 1-simplic of $\mathcal{C}$
+\[
+x \rightarrow y
+\]
+It is not very hard to verify that for any $\infty$-category, there is small category $\mathcal{C}'$ whose nerve is isomorhic to it \citep[see][]{Luri2009} so any classical locally small category can be viewed as an $\infty$-category with respect to its nerve and $\infty$-category can be viewed as generalization of ordinary category from some viewpoint.
+
+\subsection{Objects, morphisms and mapping spaces}
+As in classical category theory, we can alse define \textbf{initial object}, \textbf{terminal object} and \textbf{zero object} in the setting of $\infty$-category. But this generalization is not obvious which relies on definition of mapping spaces.
+\par
+Suppose $\mathcal{C}$ be an $\infty$-category. We now define an object $\map_{\mathcal{C}}(X,Y)$ for any two objects $X,Y$ in $\mathcal{C}$, which plays the role of morphism calss in ordinary category theory.
+\par
+First, we need to recall the homotopy category of a simplicial set. Suppose $S$ be a simplicial set, we make a simplicial category $C[S]$ associated to $S$. Since $C[S]$ has model structure and all objects are fibrant and cofibrant, localization of weak equivalences is homotopy category, denoted by $hS$.
+\par
+The simplicial category $C[\Delta^{n}]$ is defined as follows
+\begin{itemize}
+  \item Ob : Objects of $[n]$
+  \item Mor : \[
+  \map_{C[\Delta^n]}(i,j)= \left\{
+  \begin{aligned}
+    &\emptyset & &\text{if } j<i\\
+    &N(P_{ij})& &\text{if } i \leq j&
+  \end{aligned} \right.
+  \]
+  $P_{ij}=\{ I \subset [n] \big| (i,j \in I) \wedge (\forall k \in I )[i \leq k \leq j] \} $ is a partial order set so can be viewed as a category.
+\end{itemize}
+\begin{mydefn}
+Let $\mathcal{C}$ be a $\infty$-category.
+\begin{enumerate}
+  \item an initial object of $\mathcal{C}$ is an object which is initial object in associated homotopy category $h \mathcal{C}$ or equivalently mapping space $\map_{\mathcal{C}}(0,Y)$ is weak contractible for any object $Y \in \mathcal{C}$.
+  \item a final object of $\mathcal{C}$ is an object which is final object in associated homotopy category $h \mathcal{C}$ or equivalently mapping space $\map_{\mathcal{C}}(X,0)$ is weak contractible for any object $X \in \mathcal{C}$.
+  \item a object is called \textbf{zero object} if it is both final and initial.
+\end{enumerate}
+\end{mydefn}
+
+\begin{mydefn}
+  An $\infty$-category is \textbf{pointed} if it is with zero object.
+\end{mydefn}
+
+\subsection{$\infty$-groupoids}
+In ordinary category theory, groupoid is an important notion which is generalization of group. In $\infty$-category version, groupoids are not just a generalization of groups but essential role in homotopy theory.
+\par
+Informally, an $\infty$-groupoid is an $\infty$-category with all $k$-morphisms are invertable.
+\begin{mydefn}
+  An $\infty$-category $\mathcal{G}$ is called $\infty$-groupoid if it is a Kan complex.
+\end{mydefn}
+\begin{prop}[Joyal]
+  Suppose $\mathcal{G}$ be an $\infty$-category, then following conditions are equivalent
+  \begin{enumerate}
+    \item $\mathcal{G}$ is an $\infty$-groupoid
+    \item $\mathcal{G}$ satisfies extension condition for all horn inclusions $\wedge^{n}_n$
+    \item $\mathcal{G}$ satisfies extension condition for all horn inclusions $\wedge^{n}_0$
+    \item homotopy category $h \mathcal{G}$ is a groupoid.
+  \end{enumerate}
+\end{prop}
+
+\subsection{Stable $\infty$-categories}
+\begin{prop}
+  Let $\mathcal{C}$ be a pointed $\infty$-category. Then $\mathcal{C}$ is stable iff the following conditions are satisfied
+\begin{enumerate}
+  \item The $\infty$-category $\mathcal{C}$ admits finite limits and colimits
+  \item A square
+  \[
+  \xymatrix{
+  X \ar[r] \ar[d]&Y \ar[d]&\\
+  X' \ar[r] &Y'&
+  }
+  \]
+  is pull-back if and only if is push-out.
+\end{enumerate}
+\end{prop}
