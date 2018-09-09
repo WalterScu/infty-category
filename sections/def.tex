@@ -1,13 +1,13 @@
 %!TEX root=../inftycat.tex
-In this section, we will give the definition of $\infty$-category given by Jacob Lurie, which is defined with notion of quasi-category. We assume that readers have already learnt some simplicial homotopy theory and model category.
+In this section, we will give the definition of $\infty$-category given by Jacob Lurie, which is defined with the notion of quasi-category. We assume that readers are familiar with simplicial homotopy theory and model category.
 \begin{mydefn}
-Suppose $\mathcal{C}$ be a simplicial set. $\mathcal{C}$ is called a $\infty$-category if it is a weak Kan complex i.e there is following extensions for each positive integers $n$ and $0<i<n$.
+Suppose $\mathcal{C}$ be a simplicial set. $\mathcal{C}$ is called a $\infty$-category if it is a weak Kan complex i.e., there is following extensions for each positive integers $n$ and $0<i<n$.
 
 \[
-\xymatrix{
-\wedge^{n}_{i} \ar[r]^{f_n} \ar[d]^{i}& \mathcal{C}&\\
-\Delta[n] \ar@{-->}[ru]&  &
-}
+\begin{tikzcd}
+\Lambda^{n}_{i} \ar[r,"f-n"] \ar[d,"i"]& \mathcal{C}&\\
+\Delta[n] \ar[ru]&  &
+\end{tikzcd}
 \]
 \end{mydefn}
 
@@ -63,8 +63,8 @@ Informally, an $\infty$-groupoid is an $\infty$-category with all $k$-morphisms 
   Suppose $\mathcal{G}$ be an $\infty$-category, then following conditions are equivalent
   \begin{enumerate}
     \item $\mathcal{G}$ is an $\infty$-groupoid
-    \item $\mathcal{G}$ satisfies extension condition for all horn inclusions $\wedge^{n}_n$
-    \item $\mathcal{G}$ satisfies extension condition for all horn inclusions $\wedge^{n}_0$
+    \item $\mathcal{G}$ satisfies extension condition for all horn inclusions $\Lambda^{n}_n$
+    \item $\mathcal{G}$ satisfies extension condition for all horn inclusions $\Lambda^{n}_0$
     \item homotopy category $h \mathcal{G}$ is a groupoid.
   \end{enumerate}
 \end{prop}
@@ -76,10 +76,10 @@ Informally, an $\infty$-groupoid is an $\infty$-category with all $k$-morphisms 
   \item The $\infty$-category $\mathcal{C}$ admits finite limits and colimits
   \item A square
   \[
-  \xymatrix{
+  \begin{tikzcd}
   X \ar[r] \ar[d]&Y \ar[d]&\\
   X' \ar[r] &Y'&
-  }
+  \end{tikzcd}
   \]
   is pull-back if and only if is push-out.
 \end{enumerate}
